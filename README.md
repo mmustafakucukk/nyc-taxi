@@ -31,14 +31,23 @@ py -3.12 -m venv .venv
 pip install -r requirements.txt
 ```
 
-**Windows notu:** Bilgisayarda birden fazla Python varsa Spark yanlis Python'u acip hata
-verebilir. Bunu onlemek icin Spark baslatilmadan once su degiskenler ayarlanmali:
+Spark'i her scriptte ayni ayarlarla baslatmak icin `src/spark_baslat.py` kullanilir:
 
 ```python
-import os, sys
-os.environ["PYSPARK_PYTHON"] = sys.executable
-os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
+from spark_baslat import spark_olustur, ham_dosyalar
+spark = spark_olustur("uygulama_adi")
+df = spark.read.parquet(*ham_dosyalar())
 ```
+
+**Windows notlari:**
+
+- Bilgisayarda birden fazla Python varsa Spark yanlis Python'u acip cokuyor.
+  `spark_baslat.py` bunu `PYSPARK_PYTHON` ayariyla cozuyor.
+- Windows'ta Hadoop'un `winutils.exe` dosyasi olmadan Spark `*` ile dosya ararken takiliyor
+  ve diske dosya yazamiyor. Bu yuzden dosyalar `ham_dosyalar()` ile liste olarak okunuyor,
+  cikti dosyalari ise pandas/pyarrow ile yaziliyor.
+
+Scriptler proje ana klasorunden calistirilir: `python src/veri_profili.py`
 
 ## Gorev dagilimi
 
