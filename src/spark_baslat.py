@@ -23,6 +23,8 @@ def spark_olustur(uygulama_adi, bellek="6g"):
         .config("spark.driver.memory", bellek)
         .config("spark.sql.session.timeZone", "America/New_York")
         .config("spark.ui.showConsoleProgress", "false")  # [Stage 1: ===> ] cubugunu gizle
+        # toPandas() veriyi Arrow formatinda toplu aktarsin, satir satir aktarmaktan cok daha hizli
+        .config("spark.sql.execution.arrow.pyspark.enabled", "true")
         .getOrCreate()
     )
     spark.sparkContext.setLogLevel("ERROR")  # ekrani WARN mesajlariyla doldurmasin
