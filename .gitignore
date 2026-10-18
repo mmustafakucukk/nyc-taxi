@@ -1,0 +1,27 @@
+# Veri dosyalari cok buyuk, GitHub'a yuklenmiyor.
+# Veriyi indirmek icin: python src/veri_indir.py
+data/raw/*
+data/processed/*
+data/samples/*
+!data/**/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Spark ciktilari
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+
+# Editor / isletim sistemi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

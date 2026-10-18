@@ -1,0 +1,6 @@
+# Python 3.12 ile test edildi (PySpark henuz 3.15'i desteklemiyor)
+# Spark icin Java 17 veya 21 kurulu olmali
+pyspark==4.2.0
+pandas==2.3.3
+pyarrow==26.0.0
+jupyter==1.1.1
