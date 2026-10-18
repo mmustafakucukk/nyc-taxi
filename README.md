@@ -52,3 +52,18 @@ os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 
 NYC Taxi & Limousine Commission (TLC) Trip Record Data:
 https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+Projede Yellow Taxi verisinin Ocak, Subat ve Mart 2026 aylari kullanildi (toplam 11.077.206 yolculuk).
+
+| Dosya | Satir |
+|-------|-------|
+| yellow_tripdata_2026-01.parquet | 3.724.889 |
+| yellow_tripdata_2026-02.parquet | 3.399.866 |
+| yellow_tripdata_2026-03.parquet | 3.952.451 |
+| taxi_zone_lookup.csv | 265 |
+
+Veriyi indirmek icin:
+
+```bash
+python src/veri_indir.py
+```
