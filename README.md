@@ -12,7 +12,7 @@ Bu proje Buyuk Veri Analitigi dersi (2026-2027 Guz) proje calismasidir.
 data/
   raw/         ham veri (TLC'den indirilen dosyalar)
   processed/   temizlenmis veri (CSV + Parquet)
-  samples/     benchmark icin 100K / 1M / 5M kayitlik ornekler
+  samples/     benchmark icin 1 ay / 2 ay / 3 ay veri setleri
 src/           Python scriptleri
 notebooks/     analiz notebook'lari
 docs/          veri sozlugu ve rapor dosyalari
@@ -47,7 +47,33 @@ df = spark.read.parquet(*ham_dosyalar())
   ve diske dosya yazamiyor. Bu yuzden dosyalar `ham_dosyalar()` ile liste olarak okunuyor,
   cikti dosyalari ise pandas/pyarrow ile yaziliyor.
 
-Scriptler proje ana klasorunden calistirilir: `python src/veri_profili.py`
+## Veri hazirlama adimlari (1. Kisi)
+
+Scriptler proje ana klasorunden, bu sirayla calistirilir:
+
+| Sira | Script | Ne yapar | Cikti |
+|---|---|---|---|
+| 1 | `python src/veri_indir.py` | Ocak-Mart 2026 verisini TLC'den indirir | `data/raw/` |
+| 2 | `python src/veri_profili.py` | Bos oranlari, min/max, yuzdelik dilimler | `docs/veri_profili.md` |
+| 3 | `python src/boyut_analizi.py` | Parquet / CSV / pandas RAM boyutlari | `docs/boyut_analizi.md` |
+| 4 | `python src/temizle.py` | Hatali kayitlari temizler, bolge isimlerini ekler | `data/processed/`, `docs/temizlik_raporu.md` |
+| 5 | `python src/orneklem_olustur.py` | Benchmark icin 1 ay / 2 ay / 3 ay veri setleri (3,5M / 6,7M / 10,5M satir) | `data/samples/`, `docs/orneklemler.md` |
+
+Veri sozlugu: `docs/veri_sozlugu.md`
+
+**Temiz veriyi okumak icin:**
+
+```python
+# pandas
+import glob, pandas as pd
+df = pd.concat([pd.read_parquet(f) for f in sorted(glob.glob("data/processed/parquet/*.parquet"))])
+
+# Spark
+import glob
+from spark_baslat import spark_olustur
+spark = spark_olustur("analiz")
+df = spark.read.parquet(*sorted(glob.glob("data/processed/parquet/*.parquet")))
+```
 
 ## Gorev dagilimi
 
