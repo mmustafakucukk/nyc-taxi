@@ -1,0 +1,21 @@
+# Dashboard temasi: PatiPortal tasarim sistemi renkleri
+# (streamlit run dashboard/app.py proje ana klasorunden calistirilinca okunur)
+[theme]
+base = "light"
+primaryColor = "#1F5F5B"
+backgroundColor = "#FBF8F4"
+secondaryBackgroundColor = "#F4EFE8"
+textColor = "#1E2523"
+borderColor = "#E7E1D8"
+baseRadius = "12px"
+font = "sans serif"
+
+[theme.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FBF8F4"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

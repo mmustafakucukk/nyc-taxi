@@ -6,6 +6,12 @@ Bu proje Buyuk Veri Analitigi dersi (2026-2027 Guz) proje calismasidir.
 
 **Arastirma sorusu:** Veri buyudukce klasik analiz yaklasimi ne zaman yetersiz kaliyor?
 
+## Mimari
+
+![Mimari sema](docs/mimari.png)
+
+Ayrinti: `docs/mimari.md`
+
 ## Klasor yapisi
 
 ```
@@ -13,7 +19,9 @@ data/
   raw/         ham veri (TLC'den indirilen dosyalar)
   processed/   temizlenmis veri (CSV + Parquet)
   samples/     benchmark icin 1 ay / 2 ay / 3 ay veri setleri
+results/       analiz sonuclari (kucuk CSV'ler, dashboard bunlari okur)
 src/           Python scriptleri
+dashboard/     Streamlit dashboard
 notebooks/     analiz notebook'lari
 docs/          veri sozlugu ve rapor dosyalari
 sorular/       coktan secmeli sinav sorulari
@@ -74,6 +82,41 @@ from spark_baslat import spark_olustur
 spark = spark_olustur("analiz")
 df = spark.read.parquet(*sorted(glob.glob("data/processed/parquet/*.parquet")))
 ```
+
+## Aggregation analizleri ve dashboard (2. Kisi)
+
+| Sira | Komut | Ne yapar | Cikti |
+|---|---|---|---|
+| 6 | `python src/aggregations.py` | Saat, gun, bolge, rota, odeme turu ve havalimani analizleri (PySpark aggregation + join + window + Spark SQL), her analizin suresini olcer | `results/agg/*.csv`, `docs/aggregation_sonuclari.md` |
+| 7 | `streamlit run dashboard/app.py` | Sonuclari tarayicida dashboard olarak gosterir | `http://localhost:8501` |
+
+Rapor bolumu: `docs/rapor_kisi2_aggregation.md` - Proje mimarisi: `docs/mimari.md` - Sorular: `sorular/kisi2_sorular.md`
+
+Kullanilan ileri analitik islemler:
+
+- **Aggregation:** `groupBy().agg()` ile saatlik, gun x saat, bolge, rota, odeme turu ozetleri
+- **Join:** zone tablosundan `service_zone` eklemek icin broadcast join
+- **Window:** her saatin en yogun 5 bolgesi (`rank`), 7 gunluk hareketli ortalama (`avg ... rowsBetween(-6, 0)`), onceki gune gore degisim (`lag`), bolgenin ilce icindeki payi (`sum over partitionBy`)
+- **Spark SQL:** odeme turu analizi
+
+Dashboard ham veriyi degil, onceden hesaplanmis kucuk sonuc dosyalarini okur, bu yuzden hizli acilir:
+
+| Bolum | Ne gosterir | Kaynak |
+|---|---|---|
+| Ozet | Ana sayilar, one cikan bulgular, arastirma sorusunun cevabi | hepsi |
+| Veri ve temizlik | Temizlik kurallari (kural secilebilir), korunan durumlar, aranabilir veri sozlugu, dosya boyutlari | 1. Kisi |
+| Zaman analizi | Olcut (sayi/ucret/mesafe/sure/hiz) ve gun secimiyle saatlik grafik, gun x saat isi haritasi, tarih araligi secilebilen gunluk seyir | 2. Kisi |
+| Bolge analizi | Binis/inis, ilce, siralama, adet ve arama filtreleri; ilce matrisi, rotalar, saate gore en yogun bolgeler; CSV indirme | 2. Kisi |
+| Odeme analizi | Odeme turu secildikce acilan karsilastirma, saat / mesafe / ilce kirilimlari; havalimani karsilastirmasi | 2. Kisi |
+| Performans | pandas / Spark (sure veya bellek, yontem secimi), CSV / Parquet (veri buyuklugu secimi), analiz sureleri | 3. Kisi + 2. Kisi |
+| Sure tahmini | Model karsilastirmasi, ozellik onemi, hata dagilimi, kurulum | 3. Kisi |
+| Proje dokumanlari | Tum raporlar ve mimari sema uygulama icinde, indirilebilir | hepsi |
+| Sinav sorulari | 10 soru, cevaplari kontrol edip puan gosterir | hepsi |
+
+Dashboard ham veriyi degil kucuk sonuc dosyalarini (`results/`, `docs/`, `sorular/`) okur; Spark gerektirmez.
+Grafiklerin altindaki yorumlar ve basliklardaki sayilar sonuc dosyalarindan hesaplanir; veri degisirse metinler de
+kendiliginden guncellenir.
+Gorunum PatiPortal tasarim sisteminden uyarlandi; tema ayarlari `.streamlit/config.toml` icinde.
 
 ## Gorev dagilimi
 

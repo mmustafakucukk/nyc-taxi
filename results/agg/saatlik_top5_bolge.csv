@@ -1,0 +1,121 @@
+pickup_hour,PU_Zone,yolculuk,sira
+0,East Village,24889,1
+0,West Village,18483,2
+0,JFK Airport,16072,3
+0,Greenwich Village South,15174,4
+0,Lower East Side,13913,5
+1,East Village,22772,1
+1,West Village,14979,2
+1,Lower East Side,13705,3
+1,Greenwich Village South,12830,4
+1,JFK Airport,7818,5
+2,East Village,16512,1
+2,Lower East Side,11297,2
+2,West Village,9952,3
+2,Greenwich Village South,8625,4
+2,Little Italy/NoLiTa,5495,5
+3,East Village,11887,1
+3,Lower East Side,8326,2
+3,West Village,6597,3
+3,Greenwich Village South,5339,4
+3,Little Italy/NoLiTa,4416,5
+4,East Village,6366,1
+4,Lower East Side,4529,2
+4,Clinton East,3910,3
+4,West Village,2940,4
+4,Little Italy/NoLiTa,2308,5
+5,JFK Airport,5392,1
+5,Penn Station/Madison Sq West,4171,2
+5,Clinton East,3875,3
+5,Garment District,2921,4
+5,East Village,2475,5
+6,JFK Airport,9818,1
+6,Penn Station/Madison Sq West,8346,2
+6,Clinton East,6012,3
+6,Upper East Side North,5616,4
+6,Yorkville West,5267,5
+7,Upper East Side North,17557,1
+7,Upper East Side South,12240,2
+7,Penn Station/Madison Sq West,11719,3
+7,JFK Airport,11159,4
+7,Yorkville East,10172,5
+8,Upper East Side North,24790,1
+8,Upper East Side South,18718,2
+8,Penn Station/Madison Sq West,13823,3
+8,Upper West Side South,13312,4
+8,Lenox Hill East,13032,5
+9,Upper East Side North,25646,1
+9,Upper East Side South,21002,2
+9,Penn Station/Madison Sq West,15590,3
+9,Upper West Side South,14400,4
+9,Midtown East,13480,5
+10,Upper East Side North,25551,1
+10,Upper East Side South,23437,2
+10,Penn Station/Madison Sq West,15735,3
+10,Upper West Side South,15440,4
+10,Midtown Center,15075,5
+11,Upper East Side North,27237,1
+11,Upper East Side South,26922,2
+11,Midtown Center,18915,3
+11,Penn Station/Madison Sq West,18446,4
+11,Upper West Side South,15927,5
+12,Upper East Side North,30738,1
+12,Upper East Side South,29835,2
+12,Midtown Center,21397,3
+12,Upper West Side South,17613,4
+12,Penn Station/Madison Sq West,17172,5
+13,Upper East Side South,31414,1
+13,Upper East Side North,29125,2
+13,Midtown Center,23776,3
+13,Penn Station/Madison Sq West,18590,4
+13,Upper West Side South,17975,5
+14,Upper East Side South,34893,1
+14,Upper East Side North,31030,2
+14,Midtown Center,26230,3
+14,JFK Airport,21663,4
+14,LaGuardia Airport,18540,5
+15,Upper East Side North,36054,1
+15,Upper East Side South,35159,2
+15,Midtown Center,27231,3
+15,JFK Airport,26243,4
+15,LaGuardia Airport,18556,5
+16,Upper East Side South,33514,1
+16,Midtown Center,30905,2
+16,Upper East Side North,30604,3
+16,JFK Airport,28396,4
+16,Midtown East,20837,5
+17,Midtown Center,36362,1
+17,Upper East Side South,35431,2
+17,Upper East Side North,33181,3
+17,Midtown East,27153,4
+17,JFK Airport,23715,5
+18,Midtown Center,37007,1
+18,Upper East Side South,34168,2
+18,Upper East Side North,31647,3
+18,Midtown East,29117,4
+18,JFK Airport,22312,5
+19,Midtown Center,34025,1
+19,Upper East Side South,27842,2
+19,JFK Airport,26378,3
+19,Midtown East,24370,4
+19,Upper East Side North,22705,5
+20,Midtown Center,36791,1
+20,JFK Airport,29645,2
+20,Upper East Side South,25632,3
+20,Midtown East,24358,4
+20,Times Sq/Theatre District,21485,5
+21,Midtown Center,35166,1
+21,Times Sq/Theatre District,31733,2
+21,JFK Airport,27474,3
+21,Upper East Side South,25175,4
+21,Lincoln Square East,24794,5
+22,Times Sq/Theatre District,29067,1
+22,JFK Airport,27804,2
+22,Midtown Center,25337,3
+22,Lincoln Square East,24009,4
+22,East Village,23457,5
+23,East Village,23966,1
+23,JFK Airport,23519,2
+23,West Village,21118,3
+23,Times Sq/Theatre District,16018,4
+23,Greenwich Village South,15080,5

@@ -1,0 +1,34 @@
+PU_Borough,DO_Borough,yolculuk
+Brooklyn,Manhattan,144315
+EWR,EWR,31
+Brooklyn,Bronx,11296
+Brooklyn,EWR,123
+Manhattan,Manhattan,8351198
+Brooklyn,Brooklyn,226113
+Staten Island,Brooklyn,592
+Queens,Queens,249818
+Queens,Bronx,23155
+Bronx,Queens,9736
+Queens,EWR,645
+Staten Island,Queens,38
+Manhattan,EWR,16118
+Bronx,Brooklyn,9932
+Brooklyn,Queens,53190
+Queens,Staten Island,904
+Manhattan,Staten Island,1323
+Bronx,Staten Island,11
+Bronx,EWR,3
+Manhattan,Brooklyn,258335
+Staten Island,Manhattan,195
+Manhattan,Queens,245124
+Manhattan,Bronx,76467
+Queens,Manhattan,465927
+Staten Island,EWR,5
+Bronx,Manhattan,53237
+Bronx,Bronx,32997
+Brooklyn,Staten Island,446
+EWR,Manhattan,19
+Staten Island,Bronx,11
+Queens,Brooklyn,157862
+Staten Island,Staten Island,334
+EWR,Queens,1
