@@ -1,0 +1,18 @@
+analiz,aciklama,satir,sure_sn
+_okuma_ve_cache,Parquet okuma + bellege alma,10452582,7.75
+saatlik,"saat x hafta ici/sonu: sayi, ucret, mesafe, sure, hiz",48,1.77
+gun_saat,"haftanin gunu x saat: sayi, ucret, mesafe, sure, hiz",168,0.99
+gunluk,gunluk sayi + 7 gunluk hareketli ortalama (window),90,0.52
+binis_bolgeleri,bolge bazinda binis + ilce ici pay (window),260,1.58
+inis_bolgeleri,bolge bazinda inis,259,1.44
+ilce_matrisi,binis ilcesi x inis ilcesi,33,0.85
+top_rotalar,en sik 20 bolge-bolge rotasi,20,1.69
+saatlik_top5_bolge,her saatin en yogun 5 bolgesi (window rank),120,1.05
+servis_bolgesi,service_zone bazinda ozet (broadcast join),4,0.9
+odeme_turu,odeme turune gore ucret ve bahsis (Spark SQL),5,0.84
+odeme_saat,odeme turu x saat,120,0.75
+odeme_mesafe,odeme turu x mesafe dilimi,25,0.89
+odeme_ilce,odeme turu x binis ilcesi,27,1.0
+havalimani,havalimani / sehir ici karsilastirma,3,1.03
+genel_ozet,genel toplamlar,1,0.46
+_toplam,script toplam (Spark acilisi dahil),10452582,28.91
